@@ -21,13 +21,23 @@ Note that as there are three rounds, the actual input (x) will look something li
 
 */
 
-const testData = [
+const testData1 = [
   [{ P1: "XX", P2: "0O" }, true],
   [{ P1: "O0", P2: "OO" }, false],
   [{ P1: "00", P2: "XX" }, true],
 ];
+const testData2 = [
+  [{ P1: "XX", P2: "0O" }, true],
+  [{ P1: "OX", P2: "OO" }, false],
+  [{ P1: "0X", P2: "XX" }, true],
+];
+const testData3 = [
+  [{ P1: "XX", P2: "0X" }, true],
+  [{ P1: "O0", P2: "OX" }, false],
+  [{ P1: "00", P2: "XX" }, true],
+];
 
-const calculatePoints = function (gameData) {
+const determineWinner = function (gameData) {
   const splitAndScore = (str, pts) => {
     let playerPts = 0;
     str.split("").forEach((item) => (item === "X" ? (playerPts += pts) : null));
@@ -49,7 +59,9 @@ const calculatePoints = function (gameData) {
   let message = `${winner} Wins!`;
   if (petePoints == philPoints) message = "Draw!";
 
-  console.log(message);
+  return message;
 };
 
-calculatePoints(testData);
+console.log(determineWinner(testData1));
+console.log(determineWinner(testData2));
+console.log(determineWinner(testData3));
