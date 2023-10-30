@@ -28,18 +28,25 @@ const testData = [
 ];
 
 const calculatePoints = function (gameData) {
-  const petePoints = 0;
-  const philPoints = 0;
+  let petePoints = 0;
+  let philPoints = 0;
 
   gameData.forEach((game) => {
     const [{ P1: pete, P2: phil }, isDouble] = game;
-    console.log(pete);
-    console.log(isDouble);
+    const pts = isDouble ? 2 : 1;
+    pete
+      .split("")
+      .forEach((item) => (item === "X" ? (petePoints += pts) : null));
+    phil
+      .split("")
+      .forEach((item) => (item === "X" ? (philPoints += pts) : null));
   });
 
   let winner = petePoints > philPoints ? "Pete" : "Phil";
   let message = `${winner} Wins!`;
   if (petePoints == philPoints) message = "Draw!";
+
+  console.log(message);
 };
 
 calculatePoints(testData);
