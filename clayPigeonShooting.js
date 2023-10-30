@@ -22,24 +22,27 @@ Note that as there are three rounds, the actual input (x) will look something li
 */
 
 const testData = [
-  [{ P1: "XX", P2: "XO" }, true],
-  [{ P1: "OX", P2: "OO" }, false],
-  [{ P1: "XX", P2: "OX" }, true],
+  [{ P1: "XX", P2: "0O" }, true],
+  [{ P1: "O0", P2: "OO" }, false],
+  [{ P1: "00", P2: "XX" }, true],
 ];
 
 const calculatePoints = function (gameData) {
+  const splitAndScore = (str, pts) => {
+    let playerPts = 0;
+    str.split("").forEach((item) => (item === "X" ? (playerPts += pts) : null));
+    return playerPts;
+  };
+
   let petePoints = 0;
   let philPoints = 0;
 
   gameData.forEach((game) => {
     const [{ P1: pete, P2: phil }, isDouble] = game;
     const pts = isDouble ? 2 : 1;
-    pete
-      .split("")
-      .forEach((item) => (item === "X" ? (petePoints += pts) : null));
-    phil
-      .split("")
-      .forEach((item) => (item === "X" ? (philPoints += pts) : null));
+
+    petePoints += splitAndScore(pete, pts);
+    philPoints += splitAndScore(phil, pts);
   });
 
   let winner = petePoints > philPoints ? "Pete" : "Phil";
