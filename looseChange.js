@@ -13,21 +13,43 @@ loose_change(-435)  ==>  {'Nickels': 0, 'Pennies': 0, 'Dimes': 0, 'Quarters': 0}
 loose_change(4.935) ==>  {'Nickels': 0, 'Pennies': 4, 'Dimes': 0, 'Quarters': 0}
 */
 
-const looseChange = function (cents) {
-  const obj = { Nickels: 0, Pennies: 0, Dimes: 0, Quarters: 0 };
+// MY SOLUTION
+// const looseChange = function (cents) {
+//   const obj = { Nickels: 0, Pennies: 0, Dimes: 0, Quarters: 0 };
 
-  if (cents <= 0) return obj;
-  cents = Math.floor(cents);
+//   if (cents <= 0) return obj;
 
-  obj.Quarters = Math.floor(cents / 25);
-  centsAfter25 = cents % 25;
-  obj.Dimes = Math.floor(centsAfter25 / 10);
-  centsAfter10 = centsAfter25 % 10;
-  obj.Nickels = Math.floor(centsAfter10 / 5);
-  obj.Pennies = centsAfter10 % 5;
+//   obj.Quarters = Math.floor(cents / 25);
+//   centsAfter25 = cents % 25;
+//   obj.Dimes = Math.floor(centsAfter25 / 10);
+//   centsAfter10 = centsAfter25 % 10;
+//   obj.Nickels = Math.floor(centsAfter10 / 5);
+//   obj.Pennies = Math.floor(centsAfter10 % 5);
 
-  return obj;
-};
+//   return obj;
+// };
+
+// FROM ONLINE
+// const looseChange = (cents) => (
+//   (cents = Math.max(cents, 0)),
+//   {
+//     Quarters: (cents / 25) | 0,
+//     Dimes: ((cents % 25) / 10) | 0,
+//     Nickels: (((cents % 25) % 10) / 5) | 0,
+//     Pennies: cents % 5 | 0,
+//   }
+// );
+
+// FROM ONLINE
+// function looseChange(cents) {
+//   const obj = { Nickels: 0, Pennies: 0, Dimes: 0, Quarters: 0 };
+//   if (cents <= 0) return obj;
+//   obj.Quarters = Math.floor(cents / 25);
+//   obj.Dimes = Math.floor((cents % 25) / 10);
+//   obj.Nickels = Math.floor(((cents % 25) % 10) / 5);
+//   obj.Pennies = Math.floor(((cents % 25) % 10) % 5);
+//   return obj;
+// }
 
 console.log(-1, looseChange(-1));
 console.log(0, looseChange(0));
