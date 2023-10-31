@@ -25,6 +25,8 @@ Dog Years
 
 
 */
+
+// MY CODE
 const convertYears = function (numYears) {
   const yearsArr = new Array(15, 15);
   const addYears = (yearsCat, dogYears) =>
@@ -36,6 +38,20 @@ const convertYears = function (numYears) {
   yearsArr.unshift(numYears);
   return yearsArr;
 };
+
+// ONLINE SOLUTION
+// const convertYears = function(y) {
+//   if (y == 1) return [1, 15, 15]
+//   if (y == 2) return [2, 24, 24]
+//   return [y, (y-2) * 4 + 24, (y-2) * 5 + 24]
+// }
+
+// ONLINE SOLUTION
+// const convertYears = humanYears => [
+//   humanYears,
+//   ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
+//   ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
+// ];
 
 console.log(convertYears(1));
 console.log(convertYears(2));
