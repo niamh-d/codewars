@@ -1,5 +1,7 @@
 /*
 
+https://www.codewars.com/kata/clay-pigeon-shooting
+
 Pete and his mate Phil are out in the countryside shooting clay pigeons with a shotgun - amazing fun.
 
 They decide to have a competition. 3 rounds, 2 shots each. Winner is the one with the most hits.
