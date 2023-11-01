@@ -10,3 +10,6 @@ but years divisible by 400 are leap years.
 Tested years are in range 1600 ≤ year ≤ 4000.
 
 */
+
+const isLeapYear = (year) =>
+  (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
