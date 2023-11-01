@@ -28,7 +28,14 @@ nextHappyYear (1001) ==> return (1023)
 Explanation:
 As the Next closest year with only distinct digits is 1023 .
 
-
-
-
 */
+
+const findNextHappyYear = (year) => {
+  while (year) {
+    if (new Set(Array.from(String(++year))).size === 4) return year;
+  }
+};
+
+console.log(findNextHappyYear(7712));
+console.log(findNextHappyYear(8989));
+console.log(findNextHappyYear(1001));
