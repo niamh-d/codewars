@@ -2,6 +2,10 @@
 
 ## 2023
 
+### November
+
+- [Leap Years](https://www.codewars.com/kata/526c7363236867513f0005ca) - 1 November 2023
+
 ### October
 
 - [Cat Years, Dog Years](https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b) – 31 October 2023
