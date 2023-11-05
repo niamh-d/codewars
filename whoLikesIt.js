@@ -15,20 +15,42 @@ Note: For 4 or more names, the number in "and 2 others" simply increases.
 
 */
 
+// NOVEMBER 2023
 function likes(names) {
+  if (!names.length) return "no one likes this";
+
   const [first, second, ...rest] = names;
-  const numOfNames = names.length;
   let output;
-  if (numOfNames == 0) {
-    output = "no one likes this";
-  } else if (numOfNames == 1) {
+  if (names.length === 1) {
     output = `${first} likes this`;
-  } else if (numOfNames == 2) {
+  } else if (names.length === 2) {
     output = `${first} and ${second} like this`;
-  } else if (numOfNames == 3) {
+  } else if (names.length === 3) {
     output = `${first}, ${second} and ${rest} like this`;
   } else {
-    output = `${first}, ${second} and ${numOfNames - 2} others like this`;
+    output = `${first}, ${second} and ${names.length - 2} others like this`;
   }
   return output;
 }
+
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+console.log(likes([]));
+
+// OCTOBER 2022
+// function likes(names) {
+//   const [first, second, ...rest] = names;
+//   const numOfNames = names.length;
+//   let output;
+//   if (numOfNames == 0) {
+//     output = "no one likes this";
+//   } else if (numOfNames == 1) {
+//     output = `${first} likes this`;
+//   } else if (numOfNames == 2) {
+//     output = `${first} and ${second} like this`;
+//   } else if (numOfNames == 3) {
+//     output = `${first}, ${second} and ${rest} like this`;
+//   } else {
+//     output = `${first}, ${second} and ${numOfNames - 2} others like this`;
+//   }
+//   return output;
+// }
