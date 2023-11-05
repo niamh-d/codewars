@@ -37,5 +37,40 @@ Example
 Encode("scout",1939);  ==>  [ 20, 12, 18, 30, 21]
 Encode("masterpiece",1939);  ==>  [ 14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8]
 
-
 */
+
+// MINE
+const encode = (str, key) => {
+  const alphaArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+  const keyArr = String(key).repeat(50).split("");
+  return Array.from(str).map(
+    (char, i) => alphaArr.indexOf(char) + 1 + Number(keyArr[i])
+  );
+};
+
+// OTHERS' SOLUTIONS
+
+function encode(str, n) {
+  let key = String(n);
+
+  return Array.from(
+    str,
+    (e, i) => e.charCodeAt(0) - 96 + Number(key[i % key.length])
+  );
+}
+
+const encode = (s, n) => {
+  let k = "" + n;
+  return Array.from(s, (e, i) => e.charCodeAt() - 96 + Number(k[i % k.length]));
+};
+
+function encode(str, n) {
+  const key = String(n);
+  const asciiOffset = "a".charCodeAt() - 1;
+  return str
+    .split("")
+    .map(
+      (letter, idx) =>
+        letter.charCodeAt() - asciiOffset + Number(key[idx % key.length])
+    );
+}
