@@ -14,3 +14,9 @@
 - [Reverse every other word in the string](https://www.codewars.com/kata/reverse-every-other-word-in-the-string) – 31 October 2023
 - [Clay Pigeon Shooting](https://www.codewars.com/kata/clay-pigeon-shooting) – 30 October 2023
 - [Loose Change](https://www.codewars.com/kata/loose-change) – 30 October 2023
+
+## 2022
+
+### October
+
+[Who Likes it?](https://www.codewars.com/kata/5266876b8f4bf2da9b000362) - 17 October 2022
